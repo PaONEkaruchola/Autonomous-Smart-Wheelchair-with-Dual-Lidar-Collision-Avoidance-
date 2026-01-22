@@ -1,0 +1,255 @@
+<?xml version="1.0" ?>
+<robot name="whintel" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find whintel_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find whintel_description)/urdf/whintel.trans" />
+<xacro:include filename="$(find whintel_description)/urdf/whintel.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.00017380287337918798 -0.02270645524029277 0.34666439427092555" rpy="0 0 0"/>
+    <mass value="326.55857326684753"/>
+    <inertia ixx="40.140277" iyy="19.600365" izz="28.614396" ixy="0.007004" iyz="-13.170371" ixz="0.003247"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="brw_1">
+  <inertial>
+    <origin xyz="0.025000424085475037 -2.7372171179651517e-07 9.040309259522594e-08" rpy="0 0 0"/>
+    <mass value="37.269695397239936"/>
+    <inertia ixx="0.578146" iyy="0.296838" izz="0.296838" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.260232 -0.200189 -0.175226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/brw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.260232 -0.200189 -0.175226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/brw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="blw_1">
+  <inertial>
+    <origin xyz="-0.024999575914525063 -2.7372171179651517e-07 9.040309259522594e-08" rpy="0 0 0"/>
+    <mass value="37.269695397239936"/>
+    <inertia ixx="0.578146" iyy="0.296838" izz="0.296838" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.259768 -0.200189 -0.175226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/blw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.259768 -0.200189 -0.175226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/blw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="la_1">
+  <inertial>
+    <origin xyz="4.240854749556805e-07 -2.737217395520908e-07 0.024382791809575366" rpy="0 0 0"/>
+    <mass value="1.0803774893295328"/>
+    <inertia ixx="0.000454" iyy="0.000454" izz="0.000476" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000232 -0.275189 -0.980226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/la_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000232 -0.275189 -0.980226" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/la_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lb_1">
+  <inertial>
+    <origin xyz="1.7230525773098005e-07 0.02999972627826064 0.049066071181366355" rpy="0 0 0"/>
+    <mass value="1.064769106601666"/>
+    <inertia ixx="0.000441" iyy="0.000441" izz="0.000465" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="7e-06 0.644811 -0.175007" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="7e-06 0.644811 -0.175007" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find whintel_description)/meshes/lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="brj" type="continuous">
+  <origin xyz="-0.260232 0.200189 0.175226" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="brw_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="blj" type="continuous">
+  <origin xyz="0.259768 0.200189 0.175226" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="blw_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="laj" type="fixed">
+  <origin xyz="-0.000232 0.275189 0.980226" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="la_1"/>
+</joint>
+
+<joint name="lbj" type="fixed">
+  <origin xyz="-7e-06 -0.644811 0.175007" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lb_1"/>
+</joint>
+
+
+<gazebo>
+  <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+
+    <!-- wheels -->
+    <left_joint>blj</left_joint>
+    <right_joint>brj</right_joint>
+
+    <!-- kinematics -->
+    <wheel_separation>0.419568</wheel_separation>
+    <wheel_diameter>0.350</wheel_diameter>
+
+    <!-- limits -->
+    <max_wheel_torque>160</max_wheel_torque>
+    <max_wheel_acceleration>3.0</max_wheel_acceleration>
+
+    <!-- output -->
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>false</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+    
+  </plugin>
+</gazebo>
+
+
+<gazebo reference="la_1">
+  <sensor type="ray" name="lidar_la_1">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>false</visualize>
+    <update_rate>10.0</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>512</samples>
+          <resolution>1</resolution>
+          <min_angle>-3.14</min_angle>
+          <max_angle>3.14</max_angle>
+        </horizontal>
+        <vertical>
+          <samples>16</samples>
+          <resolution>1</resolution>
+          <min_angle>-0.2618</min_angle>
+          <max_angle>0.2618</max_angle>
+        </vertical>
+      </scan>
+      <range>
+        <min>0.1</min>
+        <max>100.0</max>
+        <resolution>0.00000001</resolution>
+      </range>
+    </ray>
+    <plugin name="gazebo_ros_laser_controller_la" filename="libgazebo_ros_ray_sensor.so">
+      <topicName>/la/laser/scan</topicName>
+      <frame_name>la_1</frame_name>
+    </plugin>
+  </sensor>
+</gazebo>
+<!-- REAR LiDAR (lb_1) -->
+ <gazebo reference="lb_1">
+   <sensor type="ray" name="lidar_lb_1">
+     <pose>0 0 0 0 0 0</pose>
+     <visualize>false</visualize>
+     <update_rate>10.0</update_rate>
+     <ray>
+       <scan>
+         <horizontal>
+           <samples>512</samples>
+           <resolution>1</resolution>
+           <min_angle>-3.14</min_angle>
+           <max_angle>0</max_angle>
+         </horizontal>
+         <vertical>
+           <samples>16</samples>
+           <resolution>1</resolution>
+           <min_angle>-0.2618</min_angle>
+           <max_angle>0.2618</max_angle>
+         </vertical>
+       </scan>
+       <range>
+         <min>0.1</min>
+         <max>34.0</max>
+         <resolution>0.01</resolution>
+       </range>
+     </ray>
+     <plugin name="gazebo_ros_laser_controller_lb" filename="libgazebo_ros_ray_sensor.so">
+       <topicName>/lb/laser/scan</topicName>
+       <frameName>lb_1</frameName>
+     </plugin>
+   </sensor>
+ </gazebo>
+
+ <gazebo reference="la_1">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <ros>
+            <remapping>~/out:=imu</remapping>
+          </ros>
+        <topicName>imu</topicName>
+        <bodyName>la_1</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>la_1</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+</robot>
+
