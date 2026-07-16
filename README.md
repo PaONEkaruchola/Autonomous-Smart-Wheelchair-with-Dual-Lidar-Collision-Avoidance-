@@ -7,6 +7,10 @@ simulated in Gazebo, and localized/mapped using Google Cartographer in 3D.
 This repository contains the `whintel_description` ROS 2 package: the robot
 description (mesh + URDF), the simulation world, sensor transforms, and the
 Cartographer configuration used to build a 3D map from the onboard sensors.
+## Demo video
+
+[![Watch the demo](https://www.youtube.com/watch?v=449FNtofZic/hqdefault.jpg)](https://www.youtube.com/watch?v=449FNtofZic)
+
 
 ## Features
 
